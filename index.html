@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="img/logo.png" type="image/x-icon">
+    <title>Weather</title>
+    <link rel="stylesheet" href="Bootstrap/bootstrap.min.css">
+    <link rel="stylesheet" href="css/all.min.css">
+    <link rel="stylesheet" href="css/Style.css">
+</head>
+<body>
+  <div class="site-content" id="site-content">
+    <!-- START NAVBAR -->
+      <nav class="navbar navbar-expand-lg p-4" id="home">
+        <div class="container">
+          <a class="navbar-brand text-white position-relative" href="#"> <img src="img/logo.png"  alt="">
+            Weather <br/><span class="position-absolute ms-5 ps-3"> Tagline goes here</span></a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"><i class="fa-solid fa-bars" style="color: #ffffff;"></i></span>
+          </button>
+          <div class="collapse navbar-collapse text-center" id="navbarSupportedContent">
+            <ul class="navbar-nav ms-md-auto mb-2 mb-lg-0 p-4">
+              <li class="nav-item ">
+                <a class="nav-link me-1 active" aria-current="page" href="#home">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link me-1" href="#">News</a>
+              </li>
+              <li class="nav-item ">
+                <a class="nav-link me-1" href="#">Live cameras</a>
+              </li>
+              <li class="nav-item ">
+                <a class="nav-link me-1" href="#">Photos</a>
+              </li>
+              <li class="nav-item ">
+                <a class="nav-link me-1" href="Contact/contact.html">Contact</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    <!-- END NAVBAR -->
+    
+    <!-- START HEADER SECTION -->
+    <div class="hero">
+      <div class="container">
+        <form  class="find-location position-relative">
+          <input type="text" placeholder="Find your location..." class="w-100 text-white f-input" id="search">
+          <input type="button" value="Find" class="b-input position-absolute" id="submit">
+      </form>
+      </div>
+<div class="back-ground">
+  
+      <div class="container pb-5">
+        <div class="row g-0 ">
+            
+            <!-- START TODAY DATA SECTION -->
+            <div class="col-lg-4 item bg-sec-color m-0 ">    
+                    <div class="d-flex justify-content-between py-2 px-3 bg-main-color rounded-start" id="today-date">
+                      <p id="today-date-day-name" class="my-auto"> Sunday</p>
+                      <span>
+                          <span id="today-date-day-number" class="my-auto">30</span>
+                          <span id="today-date-month" class="my-auto">May</span>
+                      </span>
+                     </div>
+                     <div class="item-content text-start px-3 py-3 pt-4" id="today">
+                      <p id="today-location" class="fs-4">Cairo</p>
+                      <div class="">
+                          <span class="todayTemp">
+                              <span id="today-temp">20.3</span>
+                              <span><sup>o</sup>C</span>
+                          </span>
+                         <br/><img id="today-condition-img" src="img/113.webp" width="100px" alt="">
+                      </div>
+                      <p id="today-condition-text" class="text-light-blue">Sunny</p>
+                     </div>
+                     <div class="item-footer d-flex text-light  ">
+
+                      <div class="d-flex me-3 footer-img-hero text-center">
+                        <i class="fa-solid fa-umbrella pt-1 ps-4"></i>
+                          <p id="humidity" class="ps-2">20</p>
+                      </div>
+                      
+                      <div class="d-flex me-3 footer-img-hero text-center">
+                        <i class="fa-solid fa-wind pt-1"></i>
+                          <p id="wind" class="ps-1">30 km/h</p>
+                      </div>
+                      <div class="d-flex me-3 footer-img-hero text-center">
+                        <i class="fa-regular fa-compass pt-1"></i>
+                          <p id="wind-direction" class="ps-2">East</p>
+                      </div>
+                     </div>
+            </div>
+            <!-- END TODAY DATA SECTION -->
+
+            <!-- START TOMORROW DATA SECTION -->
+            <div class="col-lg-4 item bg-sec-color2 m-0  ">
+                <div class=" bg-main-color2 text-center py-2" id="tomorrow-date">
+                  <p class="next-day-name my-auto aftertomorrow find-location">Friday</p>
+                 </div>               
+                 <div class=" text-center pt-5 p-3 pt-4 text-light" id="tomorrow">
+                   <img class="next-condition-img mt-3" src="img/113.webp" alt="">
+                   <h3>
+                     <span class="next-max-temp"></span>
+                     <span><sup>o</sup>C</span>
+                   </h3>
+                   <h5 class="test">
+                      <span class="next-min-temp"></span>
+                      <span><sup>o</sup>C</span>
+                   </h5>
+                  <p id="text-light-bluee" class="next-condition-text text-light-blue mt-4">Partly cloudy</p>
+                 </div>
+            </div>
+            <!-- END TOMORROW DATA SECTION -->
+
+            <!-- START AFTER TOMPRROW DATA SECTION -->
+            <div class="col-lg-4 item bg-sec-color m-0">
+                <div class="py-2 bg-main-color px-3 text-center">
+                  <p class="my-auto aftertomorrow find-location next-day-name"> Sunday</p>
+                 </div>               
+                 <div class="text-center pt-5 p-3 pt-5 text-light">
+                   <img class="next-condition-img mt-3" src="img/113.webp" alt="">
+                   <h3>
+                     <span class="next-max-temp"></span>
+                     <span><sup>o</sup>C</span>
+                   </h3>
+                   <h5 class="test">
+                      <span class="next-min-temp"></span>
+                      <span><sup>o</sup>C</span>
+                   </h5>
+                  <p id="text-light-blueee" class="next-condition-text  text-light-blue mt-4">Partly cloudy</p>
+               
+                 </div>
+            </div>
+            <!-- END AFTER TOMPRROW DATA SECTION -->
+        </div>
+      
+    </div>
+      <!-- START FOOTER SECTION -->
+    <footer>
+      <div class="footer">
+       <div class="container">
+
+        <div class="row">
+          <div class="col-lg-8">
+            <div class="emailSub">
+              <form  class="position-relative mt-5">
+                <input type="text" placeholder="Enter your email to Subscribe..." class="w-100 text-white f-input mt-4" id="search">
+                <input type="button" value="Subscribe" class="b-input2 position-absolute mt-4" id="submit" >
+            </form>
+            </div>
+          </div>
+
+          <div class="col-lg-4 mt-3 icons">
+            <ul class="list-unstyled d-flex mt-5 ps-5">
+              <li><a href="https://www.facebook.com/login/" target="_blank"><i class="fa-brands fa-facebook-f"></i></a></li>
+              <li><a href="https://x.com/i/flow/login" target="_blank"><i class="fa-brands fa-twitter"></i></a></li>
+              <li><a href="https://www.google.co.uk/" target="_blank"><i class="fa-brands fa-google-plus-g"></i></a></li>
+              <li><a href="https://www.pinterest.com/login/" target="_blank"><i class="fa-brands fa-pinterest"></i></a></li>
+            </ul>
+          </div>
+        </div>
+
+        <p class="footer-copyright pt-3 pb-5">Copyright 2014 Company name. Designed by Themezy. All rights reserved</p>
+       </div>
+       </div>
+    </footer>
+    <!-- END FOOTER SECTION -->
+  </div>
+  </div> 
+    <!-- END HEADER SECTION -->
+  </div>
+
+    <script src="JS/all.min.js"></script>
+    <script src="JS/bootstrap.bundle.min.js"></script>
+    <script src="JS/index.js"></script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+<!-- 
+
+
+<div class="hero">
+  <div class="container">
+      <form  class="find-location position-relative">
+          <input type="text" placeholder="Find your location..." class="w-100 text-white f-input" id="search">
+          <input type="button" value="Find" class="b-input position-absolute" id="submit">
+      </form>
+      <div class="row">
+          
+          START TODAY DATA SECTION
+          <div class="col-lg-4">
+                <div class="item bg-sec-color m-0 rounded-4">
+                  <div class="d-flex justify-content-between py-2 px-3 bg-main-color text-light rounded-start" id="today-date">
+                    <p id="today-date-day-name" class="my-auto"> Sunday</p>
+                    <span>
+                        <span id="today-date-day-number" class="my-auto">30</span>
+                        <span id="today-date-month" class="my-auto">May</span>
+                    </span>
+                   </div>
+                   <div class="item-content text-start px-3 py-3 pt-4 text-light" id="today">
+                    <p id="today-location" class="fs-4">Cairo</p>
+                    <div class="">
+                        <span class="fs-1 fw-bolder">
+                            <span id="today-temp">20</span>
+                            <span><sup>o</sup>C</span>
+                        </span>
+                       <br/><img src="img/113.webp" alt="">
+                    </div>
+                    <p id="today-condition-text" class="fs-6 text-light-blue">sunny</p>
+                   </div>
+                   <div class="item-footer d-flex text-light p-3">
+                    <div class="d-flex me-3">
+                        <img src="img/icon-umberella.png" class="footer-icons me-2" alt="">
+                        <p id="humidity">20</p>
+                    </div>
+                    <div class="d-flex me-3">
+                        <img src="img/icon-wind.png" class="footer-icons mx-2" alt="">
+                        <p id="wind">30 km/h</p>
+                    </div>
+                    <div class="d-flex me-3">
+                        <img src="img/icon-compass.png" class="footer-icons me-2" alt="">
+                        <p id="compass">East</p>
+                    </div>
+                   </div>
+                </div>
+          </div>
+          END TODAY DATA SECTION
+
+          START TOMORROW DATA SECTION
+          <div class="col-lg-4">
+            <div class="item bg-sec-color m-0 rounded-4 py-4">
+              <div class="py-2 bg-main-color text-light text-center" id="tomorrow-date">
+                <p class="next-day-name my-auto"> Friday</p>
+               </div>               
+               <div class="item-content text-start pt-5 p-3 pt-4 text-light" id="tomorrow">
+                 <img class="next-condition-img" src="img/113.webp" alt="">
+                 <h3>
+                   <span class="next-max-temp"></span>
+                   <span><sup>o</sup>C</span>
+                 </h3>
+                 <h5 class="text-muted">
+                    <span class="next-min-temp">15</span>
+                    <span><sup>o</sup>C</span>
+                 </h5>
+                <p id="today-location" class="next-condition-text fs-6 text-light-blue">Partly cloudy</p>
+             
+               </div>
+            </div>
+          </div>
+          END TOMORROW DATA SECTION
+
+          START AFTER TOMPRROW DATA SECTION
+          <div class="col-lg-4">
+            <div class="item bg-sec-color m-0 rounded-4 py-4">
+              <div class="py-2 bg-main-color px-3 text-light text-center">
+                <p class="my-auto"> Friday</p>
+               </div>               
+               <div class="item-content text-start pt-5 p-3 pt-5 text-light">
+                 <img class="next-condition-img" src="img/113.webp" alt="">
+                 <h3>
+                   <span class="next-max-temp"></span>
+                   <span><sup>o</sup>C</span>
+                 </h3>
+                 <h5 class="text-muted">
+                    <span class="next-min-temp">15</span>
+                    <span><sup>o</sup>C</span>
+                 </h5>
+                <p id="today-location" class="next-condition-text fs-6 text-light-blue">Partly cloudy</p>
+             
+               </div>
+            </div>
+          </div>
+          END AFTER TOMPRROW DATA SECTION
+      </div>
+      
+  </div>
+</div>  -->
